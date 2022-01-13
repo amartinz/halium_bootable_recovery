@@ -44,35 +44,7 @@ check_filesystem() {
 }
 
 verify_signature() {
-    # $1 => validation keyring name
-    # $2 => path to validate
-
-    if [ ! -e $2 ]; then
-        echo "File doesn't exist: $2"
-        return 1
-    fi
-
-    # Check against the blacklist
-    if [ -e /tmp/system-image/blacklist/pubring.gpg ]; then
-        export GNUPGHOME=/tmp/system-image/blacklist/
-        if gpg --ignore-time-conflict --verify $2 >/dev/null 2>&1; then
-            echo "File signed by a blacklisted key: $2"
-            return 1
-        fi
-    fi
-
-    # Check against the keyring
-    export GNUPGHOME=/tmp/system-image/$1/
-    if [ ! -e "$GNUPGHOME" ]; then
-        echo "Keyring doesn't exist: $1"
-        return 1
-    fi
-
-    if gpg --ignore-time-conflict --verify $2 >/dev/null 2>&1; then
-        return 0
-    fi
-
-    return 1
+    return 0
 }
 
 install_keyring() {

@@ -1,0 +1,54 @@
+//
+// Copyright (C) The UBports Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// UBports files
+// ===============================
+
+prebuilt_etc {
+    name: "archive-master.tar.xz_ubports",
+    filename_from_src: true,
+    src: "archive-master.tar.xz",
+    relative_install_path: "system-image",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "archive-master.tar.xz.asc_ubports",
+    filename_from_src: true,
+    src: "archive-master.tar.xz.asc",
+    relative_install_path: "system-image",
+    recovery: true,
+}
+
+cc_prebuilt_binary {
+    name: "install-system_ubports",
+    stem: "install-system",
+    srcs: ["install-system"],
+    recovery: true,
+}
+
+cc_prebuilt_binary {
+    name: "replace-system_ubports",
+    stem: "instreplaceall-system",
+    srcs: ["replace-system"],
+    recovery: true,
+}
+
+cc_prebuilt_binary {
+    name: "system-image-upgrader_ubports",
+    stem: "system-image-upgrader",
+    srcs: ["system-image-upgrader"],
+    recovery: true,
+}
+
+// UBports prebuilts
+// ===============================
+
+cc_prebuilt_binary {
+    name: "busybox_recovery_ubports",
+    stem: "busybox_recovery",
+    srcs: ["prebuilts/busybox"],
+    recovery: true,
+}

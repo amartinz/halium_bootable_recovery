@@ -210,16 +210,16 @@ cc_binary {
         "ueventd.rc.recovery",
 
         // ubports
-        "archive-master.tar.xz",
-        "archive-master.tar.xz.asc",
-        "busybox_recovery",
+        "archive-master.tar.xz_ubports",
+        "archive-master.tar.xz.asc_ubports",
+        "busybox_recovery_ubports",
         "e2fsck.recovery",
         "gpg",
-        "install-system",
-        "replace-system",
+        "install-system_ubports",
+        "replace-system_ubports",
         "simg2img_ubports",
         "simgtest_ubports",
-        "system-image-upgrader",
+        "system-image-upgrader_ubports",
         "tune2fs.recovery",
     ],
 }
